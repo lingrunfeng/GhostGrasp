@@ -2,8 +2,6 @@
 
 ### 从深度失效证据出发，在黑暗中抓取透明物体
 
-**Runfeng Ling — 曼彻斯特大学 MSc Robotics**
-
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 [在 YouTube 观看演示](https://www.youtube.com/watch?v=1ZADqmrzXGo) · [在 Bilibili 观看演示](https://www.bilibili.com/video/BV1yHbq69ERM)
@@ -119,20 +117,6 @@ GhostGrasp 当前面向固定视角、室内桌面感知和单目标顶部抓取
 - 固定视角桌面系统的复现文档。
 
 代码发布时会同时补充安装说明和软件许可证。
-
-## 引用
-
-论文公开后将在这里补充正式引用信息。在此之前，可以暂时引用MSc学位论文：
-
-```bibtex
-@mastersthesis{ling2026ghostgrasp,
-  author = {Runfeng Ling},
-  title  = {GhostGrasp: Grasping Transparent Objects in Darkness from Depth-Failure Evidence},
-  school = {The University of Manchester},
-  type   = {MSc dissertation},
-  year   = {2026}
-}
-```
 
 ## 联系方式
 

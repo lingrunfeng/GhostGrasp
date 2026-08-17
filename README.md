@@ -2,8 +2,6 @@
 
 ### Grasping Transparent Objects in Darkness from Depth-Failure Evidence
 
-**Runfeng Ling — MSc Robotics, The University of Manchester**
-
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 [Watch on YouTube](https://www.youtube.com/watch?v=1ZADqmrzXGo) · [Watch on Bilibili](https://www.bilibili.com/video/BV1yHbq69ERM)
@@ -100,40 +98,3 @@ The perception output is carried through a standard ROS 2 hypothesis interface. 
 - [Bilibili — GhostGrasp demonstration](https://www.bilibili.com/video/BV1yHbq69ERM)
 
 The videos show daylight and dark grasping, active-IR observations, maintained hypotheses, light transitions, multi-object perception, and representative failures.
-
-## Current scope
-
-GhostGrasp currently targets fixed-view, indoor tabletop perception and single-target top grasping. The deployed executor uses nominal object height for automatic grasp height. Moving cameras, side grasps, and dense clutter are outside the reported evaluation.
-
-Planned extensions include executing the predicted yaw and gripper opening, adding contact feedback to reduce slip, evaluating more active-stereo cameras and scenes, and estimating height from multiple views when nominal metadata are unavailable.
-
-## Repository status
-
-This public folder intentionally does **not** contain the complete implementation yet. The planned release package includes:
-
-- ROS 2 perception, interface, bridge, and guarded-execution packages;
-- evidence-field and hypothesis-lifecycle implementation;
-- launch files and frozen deployment configurations;
-- trained RGB/raw-IR detector weights;
-- replay, ablation, runtime, and evaluation scripts;
-- documentation for reproducing the fixed-view tabletop setup.
-
-Release instructions and software licensing will be added together with the code.
-
-## Citation
-
-The paper citation will be added when the manuscript is publicly available. Until then, the project may be referenced as:
-
-```bibtex
-@mastersthesis{ling2026ghostgrasp,
-  author = {Runfeng Ling},
-  title  = {GhostGrasp: Grasping Transparent Objects in Darkness from Depth-Failure Evidence},
-  school = {The University of Manchester},
-  type   = {MSc dissertation},
-  year   = {2026}
-}
-```
-
-## Contact
-
-Please use the GitHub issue tracker for project questions after the repository is published.
