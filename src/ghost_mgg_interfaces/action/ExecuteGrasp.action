@@ -1,0 +1,11 @@
+string trial_id
+GeometryHypothesis hypothesis
+float64 max_runtime_sec
+---
+uint8 status
+string hypothesis_id
+float64 runtime_sec
+string failure_reason
+---
+string stage
+float64 progress

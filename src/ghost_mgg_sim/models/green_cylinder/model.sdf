@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="green_cylinder">
+    <static>false</static>
+    <link name="green_cylinder_link">
+      <inertial>
+        <mass>0.020</mass>
+        <inertia>
+          <ixx>0.0000018</ixx>
+          <iyy>0.0000018</iyy>
+          <izz>0.0000016</izz>
+        </inertia>
+      </inertial>
+      <visual name="green_cylinder_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.04 0.78 0.18 1</ambient>
+          <diffuse>0.04 0.78 0.18 1</diffuse>
+          <specular>0.06 0.25 0.08 1</specular>
+        </material>
+      </visual>
+      <collision name="green_cylinder_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>1000000.0</kp>
+              <kd>10.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,108 @@
+manifest_version: 0.1
+profile_id: m3_sim_placeholder_640x480_10hz
+source: gazebo_sim_placeholder
+requires_real_device_export_before_m5: true
+
+notes:
+  - Current M3 uses Gazebo RGB/depth cameras plus a calibrated residual failure emulator.
+  - IR streams are monocular proxy images for topic/TF contract validation, not stereo disparity output.
+  - This manifest is a versioned simulation contract, not a real D435 factory calibration.
+  - Replace this file with exported RealSense intrinsics/extrinsics before M5 real replay.
+
+frames:
+  base_link: d435_link
+  color_frame: d435_color_frame
+  color_optical_frame: d435_color_optical_frame
+  depth_frame: d435_depth_frame
+  depth_optical_frame: d435_depth_optical_frame
+  infra1_frame: d435_infra1_frame
+  infra1_optical_frame: d435_infra1_optical_frame
+  infra2_frame: d435_infra2_frame
+  infra2_optical_frame: d435_infra2_optical_frame
+
+topics:
+  color_image: /ghost_mgg/d435/color/image_raw
+  color_camera_info: /ghost_mgg/d435/color/camera_info
+  depth_image_raw: /ghost_mgg/d435/depth/image_rect_raw
+  depth_camera_info: /ghost_mgg/d435/depth/camera_info
+  depth_preview: /ghost_mgg/d435/depth/image_viz
+  depth_points: /ghost_mgg/d435/depth/points
+  target_mask: /ghost_mgg/d435/target_mask
+  corrupted_depth: /ghost_mgg/d435/depth/m3_corrupted
+  corrupted_depth_preview: /ghost_mgg/d435/depth/m3_image_viz
+  corrupted_depth_points: /ghost_mgg/d435/depth/m3_points
+  hole_mask: /ghost_mgg/d435/evidence/hole_mask
+  table_leakage_mask: /ghost_mgg/d435/evidence/table_leakage_mask
+  edge_mask: /ghost_mgg/d435/evidence/edge_mask
+  flying_point_mask: /ghost_mgg/d435/evidence/flying_point_mask
+  biased_depth_mask: /ghost_mgg/d435/evidence/biased_depth_mask
+  evidence_summary: /ghost_mgg/d435/evidence/summary
+  infra1_image: /ghost_mgg/d435/infra1/image_rect_raw
+  infra1_camera_info: /ghost_mgg/d435/infra1/camera_info
+  infra2_image: /ghost_mgg/d435/infra2/image_rect_raw
+  infra2_camera_info: /ghost_mgg/d435/infra2/camera_info
+
+streams:
+  color:
+    enabled: true
+    width: 640
+    height: 480
+    update_rate_hz: 10
+    encoding: rgb8
+    horizontal_fov_rad: 0.72
+    near_m: 0.02
+    far_m: 2.0
+  depth:
+    enabled: true
+    width: 640
+    height: 480
+    update_rate_hz: 10
+    encoding: 32FC1
+    horizontal_fov_rad: 0.72
+    near_m: 0.02
+    far_m: 2.0
+    depth_scale_m_per_unit: 1.0
+  infra1:
+    enabled: true
+    width: 640
+    height: 480
+    update_rate_hz: 10
+    encoding: mono8
+    horizontal_fov_rad: 0.72
+    baseline_from_depth_frame_m: -0.026
+    role: left_ir_proxy
+  infra2:
+    enabled: true
+    width: 640
+    height: 480
+    update_rate_hz: 10
+    encoding: mono8
+    horizontal_fov_rad: 0.72
+    baseline_from_depth_frame_m: 0.026
+    role: right_ir_proxy
+
+extrinsics:
+  world_to_d435_link:
+    xyz_m: [0.286775, -0.079936, 1.105590]
+    rpy_rad: [0.0, 0.95, 2.7547]
+  d435_link_to_color_frame:
+    xyz_m: [0.0, 0.0, 0.0]
+    rpy_rad: [0.0, 0.0, 0.0]
+  d435_link_to_depth_frame:
+    xyz_m: [0.0, 0.0, 0.0]
+    rpy_rad: [0.0, 0.0, 0.0]
+  optical_frame_rotation_rpy_rad: [-1.5708, 0.0, -1.5708]
+
+failure_emulation_defaults:
+  failure_mode: mixed
+  evidence_source: target_mask
+  roi_center_u_ratio: 0.50
+  roi_center_v_ratio: 0.58
+  roi_width_ratio: 0.22
+  roi_height_ratio: 0.22
+  table_leak_depth_m: 1.20
+  flying_point_offset_m: 0.12
+  biased_depth_offset_m: -0.04
+  edge_band_pixels: 2
+  flying_point_stride: 5
+  pattern_seed: 0

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="ghost_mgg_m8_shape_library">
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+
+    <scene>
+      <ambient>0.55 0.58 0.62 1</ambient>
+      <background>0.78 0.84 0.90 1</background>
+      <shadows>false</shadows>
+    </scene>
+
+    <light name="key_light" type="directional">
+      <pose>-1.5 -2.0 4.0 0 0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <diffuse>0.95 0.92 0.86 1</diffuse>
+      <specular>0.35 0.35 0.35 1</specular>
+      <direction>-0.55 0.18 -1.0</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="ground_link">
+        <collision name="ground_collision"><geometry><plane><normal>0 0 1</normal><size>5 5</size></plane></geometry></collision>
+        <visual name="ground_visual"><geometry><plane><normal>0 0 1</normal><size>5 5</size></plane></geometry><material><ambient>0.50 0.53 0.52 1</ambient><diffuse>0.64 0.67 0.66 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <include><name>table</name><uri>model://table</uri><pose>0 0 0 0 0 0</pose></include>
+    <include><name>d435_stand_only</name><uri>model://d435_stand_only</uri><pose>0.410788 -0.079176 0.740000 0 0 -0.386880</pose></include>
+    <include><name>d435_camera_head</name><uri>model://d435_camera_head</uri><pose>0.286775 -0.079936 1.105590 0 0.950000 2.754700</pose></include>
+
+    <include><name>m8_small_cube</name><uri>model://m8_small_cube</uri><pose>-0.110 -0.090 0.749000 0 0 0.000</pose></include>
+    <include><name>m8_medium_cube</name><uri>model://m8_medium_cube</uri><pose>-0.045 -0.090 0.755000 0 0 0.785</pose></include>
+    <include><name>m8_large_cube</name><uri>model://m8_large_cube</uri><pose>0.040 -0.100 0.762500 0 0 0.350</pose></include>
+    <include><name>m8_rect_box_2x1</name><uri>model://m8_rect_box_2x1</uri><pose>0.125 -0.095 0.752500 0 0 -0.550</pose></include>
+    <include><name>m8_rect_box_3x1</name><uri>model://m8_rect_box_3x1</uri><pose>-0.105 0.000 0.751000 0 0 0.420</pose></include>
+    <include><name>m8_short_cylinder</name><uri>model://m8_short_cylinder</uri><pose>-0.025 0.000 0.749000 0 0 0</pose></include>
+    <include><name>m8_tall_cylinder</name><uri>model://m8_tall_cylinder</uri><pose>0.055 0.000 0.765000 0 0 0</pose></include>
+    <include><name>m8_tri_prism</name><uri>model://m8_tri_prism</uri><pose>0.125 0.010 0.754000 0 0 0.620</pose></include>
+    <include><name>m8_hex_prism</name><uri>model://m8_hex_prism</uri><pose>-0.090 0.095 0.755000 0 0 -0.250</pose></include>
+
+    <model name="m8_unknown_handle_target">
+      <pose>-0.020 0.090 0.747000 0 0 0.650</pose>
+      <static>false</static>
+      <link name="body">
+        <inertial><mass>0.018</mass><inertia><ixx>0.000002</ixx><iyy>0.000002</iyy><izz>0.000002</izz></inertia></inertial>
+        <visual name="bar_visual"><pose>0 0 0 0 0 0</pose><geometry><box><size>0.075 0.010 0.014</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual>
+        <visual name="grip_visual"><pose>0.033 0 0.010 0 0 0</pose><geometry><cylinder><radius>0.010</radius><length>0.020</length></cylinder></geometry><material><ambient>0.05 0.7 0.7 1</ambient><diffuse>0.05 0.7 0.7 1</diffuse></material></visual>
+        <collision name="bar_collision"><geometry><box><size>0.075 0.010 0.014</size></box></geometry></collision>
+        <collision name="grip_collision"><pose>0.033 0 0.010 0 0 0</pose><geometry><cylinder><radius>0.010</radius><length>0.020</length></cylinder></geometry></collision>
+      </link>
+    </model>
+
+    <model name="m8_unknown_thin_plate">
+      <pose>0.075 0.095 0.744000 0 0 -0.250</pose>
+      <static>false</static>
+      <link name="body">
+        <inertial><mass>0.012</mass><inertia><ixx>0.000001</ixx><iyy>0.000001</iyy><izz>0.000001</izz></inertia></inertial>
+        <visual name="visual"><geometry><box><size>0.080 0.030 0.008</size></box></geometry><material><ambient>0.82 0.82 0.78 1</ambient><diffuse>0.82 0.82 0.78 1</diffuse></material></visual>
+        <collision name="collision"><geometry><box><size>0.080 0.030 0.008</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="m8_unknown_concave_target">
+      <pose>0.145 0.095 0.750000 0 0 0.200</pose>
+      <static>false</static>
+      <link name="body">
+        <inertial><mass>0.025</mass><inertia><ixx>0.000003</ixx><iyy>0.000003</iyy><izz>0.000003</izz></inertia></inertial>
+        <visual name="left"><pose>-0.018 0 0 0 0 0</pose><geometry><box><size>0.012 0.050 0.020</size></box></geometry><material><ambient>0.8 0.2 0.2 1</ambient><diffuse>0.8 0.2 0.2 1</diffuse></material></visual>
+        <visual name="right"><pose>0.018 0 0 0 0 0</pose><geometry><box><size>0.012 0.050 0.020</size></box></geometry><material><ambient>0.8 0.2 0.2 1</ambient><diffuse>0.8 0.2 0.2 1</diffuse></material></visual>
+        <visual name="base"><pose>0 -0.019 0 0 0 0</pose><geometry><box><size>0.048 0.012 0.020</size></box></geometry><material><ambient>0.8 0.2 0.2 1</ambient><diffuse>0.8 0.2 0.2 1</diffuse></material></visual>
+        <collision name="left_collision"><pose>-0.018 0 0 0 0 0</pose><geometry><box><size>0.012 0.050 0.020</size></box></geometry></collision>
+        <collision name="right_collision"><pose>0.018 0 0 0 0 0</pose><geometry><box><size>0.012 0.050 0.020</size></box></geometry></collision>
+        <collision name="base_collision"><pose>0 -0.019 0 0 0 0</pose><geometry><box><size>0.048 0.012 0.020</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="m8_unknown_blob_target">
+      <pose>-0.145 0.085 0.760000 0 0 -0.350</pose>
+      <static>false</static>
+      <link name="body">
+        <inertial><mass>0.020</mass><inertia><ixx>0.000002</ixx><iyy>0.000002</iyy><izz>0.000002</izz></inertia></inertial>
+        <visual name="core"><geometry><sphere><radius>0.020</radius></sphere></geometry><material><ambient>0.35 0.70 0.20 1</ambient><diffuse>0.35 0.70 0.20 1</diffuse></material></visual>
+        <visual name="lobe"><pose>0.018 0.010 -0.004 0 0 0</pose><geometry><sphere><radius>0.014</radius></sphere></geometry><material><ambient>0.25 0.60 0.18 1</ambient><diffuse>0.25 0.60 0.18 1</diffuse></material></visual>
+        <collision name="core_collision"><geometry><sphere><radius>0.020</radius></sphere></geometry></collision>
+        <collision name="lobe_collision"><pose>0.018 0.010 -0.004 0 0 0</pose><geometry><sphere><radius>0.014</radius></sphere></geometry></collision>
+      </link>
+    </model>
+
+    <model name="nurse_abstract_target">
+      <pose>0.015 0.175 0.769565 1.570800 -0.000001 1.027280</pose>
+      <static>false</static>
+      <link name="body">
+        <visual name="visual">
+          <geometry><mesh><uri>https://fuel.gazebosim.org/1.0/openrobotics/models/nurse/2/files/meshes/Nurse.obj</uri><scale>0.12 0.12 0.12</scale></mesh></geometry>
+        </visual>
+        <collision name="collision">
+          <geometry><mesh><uri>https://fuel.gazebosim.org/1.0/openrobotics/models/nurse/2/files/meshes/Nurse_Col.obj</uri><scale>0.12 0.12 0.12</scale></mesh></geometry>
+        </collision>
+        <inertial><pose>0 0 0.102 0 0 0</pose><mass>0.005</mass><inertia><ixx>1e-06</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1e-06</iyy><iyz>0</iyz><izz>1e-06</izz></inertia></inertial>
+      </link>
+    </model>
+  </world>
+</sdf>

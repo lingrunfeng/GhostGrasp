@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="glass_block">
+    <static>false</static>
+    <link name="glass_block_link">
+      <inertial>
+        <mass>0.020</mass>
+        <inertia>
+          <ixx>0.0000021</ixx>
+          <iyy>0.0000021</iyy>
+          <izz>0.0000021</izz>
+        </inertia>
+      </inertial>
+      <visual name="glass_block_visual">
+        <geometry>
+          <box>
+            <size>0.025 0.025 0.025</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.70 0.90 1.00 0.45</ambient>
+          <diffuse>0.70 0.90 1.00 0.45</diffuse>
+          <specular>0.95 0.95 1.00 1</specular>
+        </material>
+        <transparency>0.55</transparency>
+      </visual>
+      <collision name="glass_block_collision">
+        <geometry>
+          <box>
+            <size>0.025 0.025 0.025</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>1000000.0</kp>
+              <kd>10.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

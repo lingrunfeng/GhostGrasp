@@ -1,0 +1,23 @@
+string trial_id
+string observation_id
+string backend_name
+ObservationRef observation
+string target_label
+string shape_hint
+geometry_msgs/TransformStamped camera_to_base
+bool has_table_prior
+geometry_msgs/Vector3 table_normal
+float64 table_offset
+float64 max_runtime_sec
+uint32 max_hypotheses
+---
+uint8 status
+string backend_name
+GeometryHypothesis[] hypotheses
+float64 runtime_sec
+string diagnostics
+---
+string backend_name
+string stage
+float64 progress
+float64 current_best_score

@@ -1,0 +1,77 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Value: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Update Interval: 0
+      Value: true
+    - Class: rviz_default_plugins/PointCloud2
+      Enabled: true
+      Name: D435 Depth Color Points
+      Topic:
+        Value: /camera/camera/depth/color/points
+      Color Transformer: RGB8
+      Size (Pixels): 2
+      Style: Points
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Name: D435 Color Image
+      Topic:
+        Value: /camera/camera/color/image_raw
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: false
+      Name: D435 Depth Image
+      Topic:
+        Value: /camera/camera/depth/image_rect_raw
+      Value: false
+    - Class: rviz_default_plugins/Image
+      Enabled: false
+      Name: D435 Infra1 Image
+      Topic:
+        Value: /camera/camera/infra1/image_rect_raw
+      Value: false
+    - Class: rviz_default_plugins/Image
+      Enabled: false
+      Name: D435 Infra2 Image
+      Topic:
+        Value: /camera/camera/infra2/image_rect_raw
+      Value: false
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: camera_link
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 1.4
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0.5
+      Name: Current View
+      Pitch: 0.45
+      Target Frame: camera_link
+      Yaw: 0.75
+    Saved: ~

@@ -1,0 +1,12 @@
+backends:
+  dummy:
+    recover_action: /geometry_backends/dummy/recover
+  mask_extrusion:
+    recover_action: /geometry_backends/mask_extrusion/recover
+executors:
+  dummy:
+    execute_action: /grasp_executors/dummy/execute
+  mycobot_sim:
+    execute_action: /grasp_executors/mycobot_sim/execute
+  moveit_sim:
+    execute_action: /grasp_executors/moveit_sim/execute

@@ -1,0 +1,49 @@
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="m2_sim_closed_loop_sequence">
+      <StartTrial trial_id="{trial_id}"
+                  observation_id="{observation_id}"
+                  observation_ref="{observation_ref}"
+                  hypothesis_index="{hypothesis_index}"
+                  attempted_hypothesis_ids="{attempted_hypothesis_ids}" />
+      <RecoverGeometry backend_name="{backend_name}"
+                       trial_id="{trial_id}"
+                       observation_id="{observation_id}"
+                       observation_ref="{observation_ref}"
+                       target_label="{target_label}"
+                       shape_hint="{shape_hint}"
+                       max_runtime_sec="{recover_timeout_sec}"
+                       max_hypotheses="{max_hypotheses}"
+                       hypotheses="{hypotheses}"
+                       recover_status="{recover_status}"
+                       recover_diagnostics="{recover_diagnostics}" />
+      <ForceSuccess>
+        <RetryUntilSuccessful num_attempts="4">
+          <Sequence name="try_ranked_hypothesis">
+            <SelectNextHypothesis hypotheses="{hypotheses}"
+                                  hypothesis_index="{hypothesis_index}"
+                                  selected_hypothesis="{selected_hypothesis}"
+                                  selected_hypothesis_id="{selected_hypothesis_id}"
+                                  attempted_hypothesis_ids="{attempted_hypothesis_ids}" />
+            <ExecuteGrasp trial_id="{trial_id}"
+                          selected_hypothesis="{selected_hypothesis}"
+                          max_runtime_sec="{execute_timeout_sec}"
+                          execute_status="{execute_status}"
+                          execute_failure_reason="{execute_failure_reason}" />
+          </Sequence>
+        </RetryUntilSuccessful>
+      </ForceSuccess>
+      <ReportTrial trial_id="{trial_id}"
+                   observation_id="{observation_id}"
+                   tree_name="m2_sim_closed_loop"
+                   backend_name="{backend_name}"
+                   recover_status="{recover_status}"
+                   hypotheses="{hypotheses}"
+                   attempted_hypothesis_ids="{attempted_hypothesis_ids}"
+                   selected_hypothesis_id="{selected_hypothesis_id}"
+                   execute_status="{execute_status}"
+                   final_status="{final_status}"
+                   failure_reason="{execute_failure_reason}" />
+    </Sequence>
+  </BehaviorTree>
+</root>

@@ -1,0 +1,7 @@
+float64 valid_depth_ratio
+float64 hole_ratio
+float64 table_leakage_ratio
+float64 edge_support_ratio
+float64 flying_point_ratio
+float64 foreground_support_ratio
+float64 failure_spatial_concentration

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ghost_mgg_bt</name>
+  <version>0.0.1</version>
+  <description>Strict BehaviorTree.CPP runner and BT nodes for GHOST-MGG.</description>
+  <maintainer email="693180059@qq.com">runfengling</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>ament_index_cpp</depend>
+  <depend>behaviortree_cpp</depend>
+  <depend>yaml-cpp-vendor</depend>
+  <depend>ghost_mgg_interfaces</depend>
+  <depend>ghost_mgg_core</depend>
+
+  <test_depend>ament_cmake_gtest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

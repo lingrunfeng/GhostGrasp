@@ -1,0 +1,67 @@
+{
+  "schema_version": "m4_sim_grasp_targets_v1",
+  "rows": [
+    {
+      "target_id": "red_cube",
+      "shape_type": "box",
+      "center_x_m": 0.070172,
+      "center_y_m": 0.012156,
+      "center_z_m": 0.7525,
+      "yaw_rad": 0.65,
+      "size_x_m": 0.025,
+      "size_y_m": 0.025,
+      "size_z_m": 0.025,
+      "required_gripper_width_m": 0.025,
+      "pregrasp_clearance_m": 0.09,
+      "grasp_type": "top_grasp",
+      "valid": true,
+      "failure_reason": ""
+    },
+    {
+      "target_id": "blue_cylinder",
+      "shape_type": "cylinder",
+      "center_x_m": 0.115,
+      "center_y_m": 0.075,
+      "center_z_m": 0.7525,
+      "yaw_rad": 0.0,
+      "radius_m": 0.0125,
+      "height_m": 0.025,
+      "required_gripper_width_m": 0.025,
+      "pregrasp_clearance_m": 0.095,
+      "grasp_type": "top_grasp",
+      "valid": true,
+      "failure_reason": ""
+    },
+    {
+      "target_id": "green_cylinder",
+      "shape_type": "cylinder",
+      "center_x_m": -0.035,
+      "center_y_m": -0.047344,
+      "center_z_m": 0.7525,
+      "yaw_rad": 0.0,
+      "radius_m": 0.0125,
+      "height_m": 0.025,
+      "required_gripper_width_m": 0.025,
+      "pregrasp_clearance_m": 0.095,
+      "grasp_type": "top_grasp",
+      "valid": true,
+      "failure_reason": ""
+    },
+    {
+      "target_id": "glass_block",
+      "shape_type": "box",
+      "center_x_m": 0.002,
+      "center_y_m": 0.1,
+      "center_z_m": 0.7525,
+      "yaw_rad": -0.35,
+      "size_x_m": 0.025,
+      "size_y_m": 0.025,
+      "size_z_m": 0.025,
+      "required_gripper_width_m": 0.025,
+      "pregrasp_clearance_m": 0.09,
+      "grasp_type": "top_grasp",
+      "valid": true,
+      "failure_reason": ""
+    }
+  ]
+}

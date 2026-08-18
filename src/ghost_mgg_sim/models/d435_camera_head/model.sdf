@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="d435_camera_head">
+    <static>true</static>
+
+    <link name="camera_link">
+      <visual name="downward_camera_head_visual">
+        <pose>-0.020 0 0.025 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.030 0.095 0.032</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.01 0.01 0.01 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+          <specular>0.14 0.14 0.14 1</specular>
+        </material>
+      </visual>
+      <collision name="downward_camera_head_collision">
+        <pose>-0.020 0 0.025 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.030 0.095 0.032</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="lens_down_left_visual">
+        <pose>-0.004 -0.026 0.000 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.006</radius>
+            <length>0.004</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.03 0.07 0.09 1</ambient>
+          <diffuse>0.04 0.12 0.16 1</diffuse>
+          <specular>0.30 0.30 0.30 1</specular>
+        </material>
+      </visual>
+
+      <visual name="lens_down_right_visual">
+        <pose>-0.004 0.026 0.000 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.006</radius>
+            <length>0.004</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.03 0.07 0.09 1</ambient>
+          <diffuse>0.04 0.12 0.16 1</diffuse>
+          <specular>0.30 0.30 0.30 1</specular>
+        </material>
+      </visual>
+
+      <sensor name="target_rgb_camera" type="camera">
+        <pose>0 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>0.72</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>2.0</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>true</visualize>
+        <topic>ghost_mgg/d435/color/image_raw</topic>
+      </sensor>
+
+      <sensor name="target_depth_camera" type="depth_camera">
+        <pose>0 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>0.72</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R_FLOAT32</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>2.0</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <topic>ghost_mgg/d435/depth/image_rect_raw</topic>
+      </sensor>
+
+      <sensor name="target_infra1_camera" type="camera">
+        <pose>0 -0.026 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>0.72</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>L8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>2.0</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <topic>ghost_mgg/d435/infra1/image_rect_raw</topic>
+      </sensor>
+
+      <sensor name="target_infra2_camera" type="camera">
+        <pose>0 0.026 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>0.72</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>L8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>2.0</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <topic>ghost_mgg/d435/infra2/image_rect_raw</topic>
+      </sensor>
+    </link>
+  </model>
+</sdf>

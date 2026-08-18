@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="m8_small_cube">
+    <static>false</static>
+    <link name="body">
+      <inertial><mass>0.015</mass><inertia><ixx>0.000001</ixx><iyy>0.000001</iyy><izz>0.000001</izz></inertia></inertial>
+      <visual name="visual"><geometry><box><size>0.018 0.018 0.018</size></box></geometry><material><ambient>0.9 0.2 0.05 1</ambient><diffuse>0.9 0.2 0.05 1</diffuse></material></visual>
+      <collision name="collision"><geometry><box><size>0.018 0.018 0.018</size></box></geometry><surface><friction><ode><mu>1.5</mu><mu2>1.5</mu2></ode></friction><contact><ode><kp>1000000.0</kp><kd>10.0</kd></ode></contact></surface></collision>
+    </link>
+  </model>
+</sdf>

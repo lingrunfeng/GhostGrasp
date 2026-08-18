@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="d435_stand_only">
+    <static>true</static>
+
+    <link name="stand_link">
+      <visual name="tabletop_base_visual">
+        <pose>0 0 0.006 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.065 0.012</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.18 0.19 0.20 1</ambient>
+          <diffuse>0.30 0.32 0.33 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <collision name="tabletop_base_collision">
+        <pose>0 0 0.006 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.065 0.012</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="short_pole_visual">
+        <pose>0 0 0.207 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.009</radius>
+            <length>0.405</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.45 0.48 0.50 1</ambient>
+          <diffuse>0.62 0.66 0.68 1</diffuse>
+          <specular>0.35 0.35 0.35 1</specular>
+        </material>
+      </visual>
+      <collision name="short_pole_collision">
+        <pose>0 0 0.207 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.009</radius>
+            <length>0.405</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="short_support_arm_visual">
+        <pose>-0.0573 -0.0237 0.4086 0 1.5708 -2.7485</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.007</radius>
+            <length>0.124</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.45 0.48 0.50 1</ambient>
+          <diffuse>0.62 0.66 0.68 1</diffuse>
+          <specular>0.35 0.35 0.35 1</specular>
+        </material>
+      </visual>
+      <collision name="short_support_arm_collision">
+        <pose>-0.0573 -0.0237 0.4086 0 1.5708 -2.7485</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.007</radius>
+            <length>0.124</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

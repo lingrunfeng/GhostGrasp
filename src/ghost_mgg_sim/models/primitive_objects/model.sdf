@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="primitive_objects">
+    <static>true</static>
+
+    <link name="objects_link">
+      <visual name="red_cube_visual">
+        <pose>0.030 0.065 0.7525 0 0 0.65</pose>
+        <geometry>
+          <box>
+            <size>0.025 0.025 0.025</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.95 0.04 0.03 1</ambient>
+          <diffuse>0.95 0.04 0.03 1</diffuse>
+          <specular>0.25 0.08 0.06 1</specular>
+        </material>
+      </visual>
+      <collision name="red_cube_collision">
+        <pose>0.030 0.065 0.7525 0 0 0.65</pose>
+        <geometry>
+          <box>
+            <size>0.025 0.025 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_cylinder_visual">
+        <pose>0.070 0.018 0.7525 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.05 0.22 0.95 1</ambient>
+          <diffuse>0.05 0.22 0.95 1</diffuse>
+          <specular>0.08 0.12 0.35 1</specular>
+        </material>
+      </visual>
+      <collision name="blue_cylinder_collision">
+        <pose>0.070 0.018 0.7525 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="green_cylinder_visual">
+        <pose>-0.035 0.025 0.7525 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.04 0.78 0.18 1</ambient>
+          <diffuse>0.04 0.78 0.18 1</diffuse>
+          <specular>0.06 0.25 0.08 1</specular>
+        </material>
+      </visual>
+      <collision name="green_cylinder_collision">
+        <pose>-0.035 0.025 0.7525 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="glass_block_visual">
+        <pose>0.002 0.100 0.7525 0 0 -0.35</pose>
+        <geometry>
+          <box>
+            <size>0.025 0.025 0.025</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.70 0.90 1.00 0.45</ambient>
+          <diffuse>0.70 0.90 1.00 0.45</diffuse>
+          <specular>0.95 0.95 1.00 1</specular>
+        </material>
+        <transparency>0.55</transparency>
+      </visual>
+      <collision name="glass_block_collision">
+        <pose>0.002 0.100 0.7525 0 0 -0.35</pose>
+        <geometry>
+          <box>
+            <size>0.025 0.025 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

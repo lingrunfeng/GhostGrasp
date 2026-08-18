@@ -1,0 +1,12 @@
+string observation_id
+string cache_namespace
+string rgb_frame_id
+string depth_frame_id
+string mask_frame_id
+builtin_interfaces/Time stamp
+float64 max_age_sec
+bool has_rgb
+bool has_depth
+bool has_ir
+bool has_mask
+bool has_camera_info

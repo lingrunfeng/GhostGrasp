@@ -1,0 +1,105 @@
+scenarios:
+  S0:
+    label: normal_day_rgbd_baseline
+    failure_mode: disabled
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.12
+    biased_depth_offset_m: -0.04
+    edge_band_pixels: 2
+    flying_point_stride: 5
+    pattern_seed: 0
+  S1:
+    label: low_light_rgb_degraded_ir_depth_available_placeholder
+    failure_mode: disabled
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.12
+    biased_depth_offset_m: -0.04
+    edge_band_pixels: 2
+    flying_point_stride: 5
+    pattern_seed: 1
+  S2:
+    label: dark_ir_proxy_transparent_failure
+    failure_mode: mixed
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.12
+    biased_depth_offset_m: -0.04
+    edge_band_pixels: 2
+    flying_point_stride: 5
+    pattern_seed: 2
+  S3:
+    label: transparent_internal_holes
+    failure_mode: hole
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.12
+    biased_depth_offset_m: -0.04
+    edge_band_pixels: 2
+    flying_point_stride: 5
+    pattern_seed: 3
+  S4:
+    label: transparent_table_leakage
+    failure_mode: table_leakage
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.12
+    biased_depth_offset_m: -0.04
+    edge_band_pixels: 2
+    flying_point_stride: 5
+    pattern_seed: 4
+  S5:
+    label: transparent_edge_flying_points
+    failure_mode: edge_flying
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.16
+    biased_depth_offset_m: -0.04
+    edge_band_pixels: 3
+    flying_point_stride: 4
+    pattern_seed: 5
+  S6:
+    label: mixed_transparent_failure
+    failure_mode: mixed
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.12
+    biased_depth_offset_m: -0.04
+    edge_band_pixels: 2
+    flying_point_stride: 5
+    pattern_seed: 6
+  S7:
+    label: reflective_specular_failure
+    failure_mode: reflective
+    roi_center_u_ratio: 0.50
+    roi_center_v_ratio: 0.58
+    roi_width_ratio: 0.22
+    roi_height_ratio: 0.22
+    table_leak_depth_m: 1.20
+    flying_point_offset_m: 0.14
+    biased_depth_offset_m: -0.05
+    edge_band_pixels: 2
+    flying_point_stride: 5
+    pattern_seed: 7

@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="d435_stand">
+    <static>true</static>
+
+    <link name="stand_link">
+      <visual name="tabletop_base_visual">
+        <pose>0 0 0.006 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.065 0.012</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.18 0.19 0.20 1</ambient>
+          <diffuse>0.30 0.32 0.33 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <collision name="tabletop_base_collision">
+        <pose>0 0 0.006 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.065 0.012</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="short_pole_visual">
+        <pose>0 0 0.236 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.009</radius>
+            <length>0.460</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.45 0.48 0.50 1</ambient>
+          <diffuse>0.62 0.66 0.68 1</diffuse>
+          <specular>0.35 0.35 0.35 1</specular>
+        </material>
+      </visual>
+      <collision name="short_pole_collision">
+        <pose>0 0 0.236 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.009</radius>
+            <length>0.460</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="short_support_arm_visual">
+        <pose>-0.060 0 0.455 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.007</radius>
+            <length>0.120</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.45 0.48 0.50 1</ambient>
+          <diffuse>0.62 0.66 0.68 1</diffuse>
+          <specular>0.35 0.35 0.35 1</specular>
+        </material>
+      </visual>
+      <collision name="short_support_arm_collision">
+        <pose>-0.060 0 0.455 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.007</radius>
+            <length>0.120</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="downward_camera_head_visual">
+        <pose>-0.125 0 0.430 0 0.95 3.1416</pose>
+        <geometry>
+          <box>
+            <size>0.030 0.095 0.032</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.01 0.01 0.01 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+          <specular>0.14 0.14 0.14 1</specular>
+        </material>
+      </visual>
+      <collision name="downward_camera_head_collision">
+        <pose>-0.125 0 0.430 0 0.95 3.1416</pose>
+        <geometry>
+          <box>
+            <size>0.030 0.095 0.032</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="lens_down_left_visual">
+        <pose>-0.160 -0.026 0.405 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.006</radius>
+            <length>0.004</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.03 0.07 0.09 1</ambient>
+          <diffuse>0.04 0.12 0.16 1</diffuse>
+          <specular>0.30 0.30 0.30 1</specular>
+        </material>
+      </visual>
+
+      <visual name="lens_down_right_visual">
+        <pose>-0.160 0.026 0.405 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.006</radius>
+            <length>0.004</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.03 0.07 0.09 1</ambient>
+          <diffuse>0.04 0.12 0.16 1</diffuse>
+          <specular>0.30 0.30 0.30 1</specular>
+        </material>
+      </visual>
+
+      <sensor name="target_rgb_camera" type="camera">
+        <pose>-0.160 0 0.405 0 0.95 3.1416</pose>
+        <camera>
+          <horizontal_fov>0.72</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>2.0</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>true</visualize>
+        <topic>ghost_mgg/d435/color/image_raw</topic>
+      </sensor>
+
+      <sensor name="target_depth_camera" type="depth_camera">
+        <pose>-0.160 0 0.405 0 0.95 3.1416</pose>
+        <camera>
+          <horizontal_fov>0.72</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R_FLOAT32</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>2.0</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <topic>ghost_mgg/d435/depth/image_rect_raw</topic>
+      </sensor>
+    </link>
+  </model>
+</sdf>

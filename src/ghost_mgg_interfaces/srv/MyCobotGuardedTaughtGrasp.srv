@@ -1,0 +1,13 @@
+bool execute
+string operator_phrase
+float64[6] pregrasp_coords_mm_deg
+float64[6] grasp_coords_mm_deg
+float64[6] lift_coords_mm_deg
+float64 speed
+float64 gripper_speed
+float64 min_z_mm
+---
+bool success
+string status
+string message
+string result_json

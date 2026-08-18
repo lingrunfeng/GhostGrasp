@@ -1,0 +1,104 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Value: true
+    - Class: rviz_default_plugins/TF
+      Enabled: false
+      Name: TF
+      Frames:
+        All Enabled: false
+        base_link:
+          Value: true
+        camera_link:
+          Value: true
+      Show Arrows: false
+      Show Axes: true
+      Show Names: true
+      Update Interval: 0
+      Value: false
+    - Class: rviz_default_plugins/Axes
+      Enabled: true
+      Length: 0.18
+      Name: Base Link Axes
+      Radius: 0.012
+      Reference Frame: base_link
+      Value: true
+    - Class: rviz_default_plugins/Axes
+      Enabled: true
+      Length: 0.12
+      Name: Camera Link Axes
+      Radius: 0.01
+      Reference Frame: camera_link
+      Value: true
+    - Class: rviz_default_plugins/RobotModel
+      Enabled: true
+      Name: RobotModel
+      Description Topic:
+        Value: /robot_description
+      TF Prefix: ""
+      Value: true
+    - Class: rviz_default_plugins/PointCloud2
+      Enabled: true
+      Name: D435 Depth Color Points
+      Topic:
+        Value: /camera/camera/depth/color/points
+      Color Transformer: RGB8
+      Size (Pixels): 3
+      Style: Points
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: M7 Real Grasp Markers
+      Topic:
+        Value: /ghost_mgg/m7_real_grasp_markers
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Name: D435 Color Image
+      Topic:
+        Value: /camera/camera/color/image_raw
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Name: YOLO Transparent Debug
+      Topic:
+        Value: /ghost_mgg/d435/transparent_debug_image
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: M8 Transparent Hypotheses
+      Topic:
+        Value: /ghost_mgg/m8_real_shadow_markers
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 1.2
+      Focal Point:
+        X: 0.18
+        Y: 0
+        Z: 0.25
+      Name: Current View
+      Pitch: 0.6
+      Target Frame: base_link
+      Yaw: 0.85
+    Saved: ~

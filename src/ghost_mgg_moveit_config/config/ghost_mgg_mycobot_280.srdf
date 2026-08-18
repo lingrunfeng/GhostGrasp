@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="mycobot_280">
+  <group name="arm">
+    <joint name="link1_to_link2"/>
+    <joint name="link2_to_link3"/>
+    <joint name="link3_to_link4"/>
+    <joint name="link4_to_link5"/>
+    <joint name="link5_to_link6"/>
+    <joint name="link6_to_link6_flange"/>
+  </group>
+
+  <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="base_link"/>
+
+  <group_state name="home" group="arm">
+    <joint name="link1_to_link2" value="0.0"/>
+    <joint name="link2_to_link3" value="0.0"/>
+    <joint name="link3_to_link4" value="0.0"/>
+    <joint name="link4_to_link5" value="0.0"/>
+    <joint name="link5_to_link6" value="0.0"/>
+    <joint name="link6_to_link6_flange" value="0.0"/>
+  </group_state>
+
+  <group_state name="pregrasp" group="arm">
+    <joint name="link1_to_link2" value="0.0"/>
+    <joint name="link2_to_link3" value="-0.85"/>
+    <joint name="link3_to_link4" value="1.35"/>
+    <joint name="link4_to_link5" value="-0.85"/>
+    <joint name="link5_to_link6" value="0.65"/>
+    <joint name="link6_to_link6_flange" value="0.0"/>
+  </group_state>
+
+  <disable_collisions link1="base_link" link2="link1" reason="Adjacent"/>
+  <disable_collisions link1="link1" link2="link2" reason="Adjacent"/>
+  <disable_collisions link1="link2" link2="link3" reason="Adjacent"/>
+  <disable_collisions link1="link3" link2="link4" reason="Adjacent"/>
+  <disable_collisions link1="link4" link2="link5" reason="Adjacent"/>
+  <disable_collisions link1="link5" link2="link6" reason="Adjacent"/>
+  <disable_collisions link1="link6" link2="link6_flange" reason="Adjacent"/>
+  <disable_collisions link1="link6_flange" link2="gripper_base" reason="Adjacent"/>
+  <disable_collisions link1="gripper_base" link2="gripper_left2" reason="Adjacent"/>
+  <disable_collisions link1="gripper_base" link2="gripper_left3" reason="Adjacent"/>
+  <disable_collisions link1="gripper_base" link2="gripper_right2" reason="Adjacent"/>
+  <disable_collisions link1="gripper_base" link2="gripper_right3" reason="Adjacent"/>
+  <disable_collisions link1="gripper_left3" link2="gripper_left1" reason="Adjacent"/>
+  <disable_collisions link1="gripper_right3" link2="gripper_right1" reason="Adjacent"/>
+  <disable_collisions link1="gripper_left1" link2="gripper_right1" reason="ClosedGripper"/>
+</robot>

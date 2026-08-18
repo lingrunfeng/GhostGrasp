@@ -1,0 +1,13 @@
+bool execute
+string operator_phrase
+float64[6] target_angles_deg
+float64 speed
+float64 max_delta_deg
+bool staged_home
+bool open_gripper
+float64 gripper_speed
+---
+bool success
+string status
+string message
+string result_json
